@@ -1,5 +1,49 @@
+# База данных
+*.sqlite3
+*.sqlite3-journal
+db.sqlite3
+*.db
+
+# Байткод и кэш Python
 __pycache__/
 *.py[cod]
 *$py.class
-.DS_Store
+*.so
+
+# Виртуальные окружения
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Переменные окружения и секреты
+.env
+.env.*
+*.env
+
+# Настройки IDE и редакторов
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 *.swp
+*.swo
+
+# Системные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Логи
+*.log
+
+# Кэш тестов и покрытия
+.pytest_cache/
+.coverage
+htmlcov/
