@@ -18,16 +18,16 @@ class Category(models.Model):
 
 
 class Course(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='courses/')
     # ----------------
-    h5 = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     # -------------------
 
     profession = models.CharField(max_length=100, null=True)
 
     
     category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='categories',null=True)
-    slug = models.SlugField(unique=True,null=True)
+    slug = models.SlugField(unique=True, null=True, blank=True)
 
 
     def __str__(self):

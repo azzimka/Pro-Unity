@@ -1,3 +1,4 @@
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
 from .models import Registration
 from .forms import RegistrationForm
@@ -16,6 +17,7 @@ def category_detail(request,slug):
 
 
 
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -27,6 +29,7 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 
+@staff_member_required
 def view_data(request):
     ism_query = request.GET.get('ism')
     it_query = request.GET.get('it')
@@ -49,8 +52,6 @@ def python(request):
 
 def front(request):
     return render(request, 'front.html')
-
-
 
 def base(request):
     return render(request, 'base.html')
