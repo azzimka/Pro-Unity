@@ -14,8 +14,12 @@ class Category(models.Model):
     
 
     def get_absolute_url(self):
-        return reverse('category_detail_url',kwargs={'slug':self.slug})
-
+        # reverse() генерирует готовый URL-адрес по имени маршрута из urls.py.
+        # Вместо ручной склейки строки "/category/" + self.slug:
+        # 1. 'category_detail_url' — ищет путь в urls.py с name='category_detail_url' (path('category/<slug:slug>/', ...))
+        # 2. kwargs={'slug': self.slug} — подставляет значение slug текущего объекта вместо <slug:slug>.
+        # Результат: строка вида '/category/python/'
+        return reverse('category_detail_url', kwargs={'slug': self.slug})
 
 class Course(models.Model):
     image = models.ImageField(upload_to='courses/')
@@ -31,17 +35,11 @@ class Course(models.Model):
 
 
     def __str__(self):
-        return self.profession
+        return self.profession or "пусто"
     
 
     def get_absolute_url(self):
         return reverse('post_detail_url',kwargs={'slug':self.slug})
-
-
-
-
-
-
 
 
 class Registration(models.Model):

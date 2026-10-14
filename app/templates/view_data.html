@@ -12,10 +12,11 @@
 
     <h1>Сохраненные данные формы</h1>
     
+    <!-- Так как method="GET", браузер не отправляет данные скрытым телом запроса, а формирует Query Parameters прямо в строке URL. -->
     <form method="GET" action="{% url 'view_data' %}" style="text-align: center; margin-bottom: 20px;">
         <button><a style="text-decoration: none; color: aliceblue;" href="{% url 'index' %}">Главная страница</a></button>
         |
-        <input type="text" name="ism" placeholder="Поиск по имени" value="{{ request.GET.ism|default_if_none:'' }}">
+        <input type="text" name="name" placeholder="Поиск по имени" value="{{ request.GET.name|default_if_none:'' }}">
         <input type="text" name="it" placeholder="Поиск по направлению" value="{{ request.GET.it|default_if_none:'' }}">
         <button type="submit">Поиск</button>
     </form>

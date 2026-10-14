@@ -17,12 +17,6 @@
                         {% for item in category %}
                             <a href="{{item.get_absolute_url}}" class="direction-btn">{{item.title}}</a>
                         {% endfor %}
-                            <!-- <a href="{% url 'card' %}" class="direction-btn">Дизайн</a>
-                            <a href="{% url 'python' %}" class="direction-btn">Back End</a>
-                            <a href="#" class="direction-btn">Архетектура</a>
-                            <a href="#" class="direction-btn">English</a>
-                            <a href="#" class="direction-btn">Маркетинг</a>
-                            <a href="#" class="direction-btn">Мобилография</a> -->
                             <a href="{% url 'register' %}" class="direction-btn all-courses">Записаться</a>
                         </div>
                     </div>
